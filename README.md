@@ -3,77 +3,132 @@
 Так что это скорее одна большая заметка, нежеле действительное руководство,
 # Ноды (узлы)
 // все создаваемые на сцене обьекты в Godot это ноды
+
 // каждая нода наследует какие-либо свойства от родителя
+
 // к примеру `Spite3D` наследует свойства `Node3D`
+
 // то есть, `position`, `rotation`, `visible` и так далее
+
 `Node3D`, `Node` `Node2D`, `Control` это базовые ноды, из которых вытекуют остальные
+
 `some_node.visible = false` скрыть ноду
+
 // Но не все ноды можно скрыть, к примеру `Node` и ее дочери не могут
+
 // Так же еще важно упомянуть, `Node3D` в своих векторных значениях, аля `rotation`, `position`,
+
 // имеет в себе вектор с тремя значениями, в то время как `Node2D`, имеет двух значный вектор, `Vector3` и `Vector2` соответсвенно
+
 // для разворота ноды, лучше всего использовать rotation_degrees, чтобы использовать `Vector3` для поворота,
+
 // так же можно использовать Euler, но лучше по началу не замарачиватся.
+
 // Так же следует добавить о 
 
+
 `Node3D` нода используемая для трехмерного пространства
+
 `Node2D` нода используемая для двухмерного пространства
+
 `Node` нода, что используема примерно в никаких ситуациях
+
 `Control` нода используемая для создания интерфейса
+
 // интерфейс лучше делать из `Control`'ьных нод, аля `ColorRect` или `TextureRect`
+
 # дочерние обьекты
 `get_node("Childame")` достать ноду по имени, от текущей ноды
+
 `get_node("user/seleton/mesh")` если нода глубже
+
 `get_node("/root/main/world/user")` абсолютный путь от корня
+
 `get_child(some_int)` индексное обращение
+
 // при создании нового обьекта, нужно добавить его на сцену к любому обьекту, чтобы его можно было физический увидеть
+
 // не добавленный обьект на сцену, к примеру звуковой, не может проигрывать звук
 
 # Поля
 `Int` цельное число, примеру `257`
+
 `Float` плавующее число, пример `3.14159`
+
 `Bool` `истина` или `ложь`, пример `1` или `0`
+
 `String` строка текста, пример `"Los Pollos Hermanos"`
+
 `Vector2`,`Vector3`,`Vector4` сгруппированный `Float`, пример `Vector3(9.8, 0.0, -1.1)
+
 `Vector2i` и `Vector3i`,`Vector4i` сгруппированный `Int`, пример `Vector4(57, -106, 24, -5000)
+
 	// вектора имеют вшитые словари с базовыми значениями
+	
 	// `ZERO, ONE, INF, LEFT, RIGHT, UP, DOWN, FORWARD, BACK
+	
 	// к примеру `Vector3.ZERO == Vector3(0, 0, 0)
+	
 	// еще можно поставить `-` перед вектором, чтобы получить его отрицательное значение
+	
 	// к примеру `-Vector3.ONE == Vector3(-1, -1, -1)
 
 `Color` может быть в формате `rgb 0-255`, `rgb 0.0-1.0`, `hex #ff00ff`
+
 	// так же можно использовать словари цветов, пример `Color.RED`, `Color.TRANSPARENT`
+	
 `Node` это любой обьект на сцене, в том числе и сама сцена
+
 	// главный обьект на основной сцене это нода `window` с именем `root`
+	
 `Resource` любой файл в директории проекте
 
 `var` переменная, значение может меняться в runtime
+
 `const` переменная, значение НЕ может меняться в runtime
 
 `var a : String` обьявление поля, с типом `String`
+
 `const g : Float = 9.80665` обьявлние поля, с константой
+
 	// константа, не может менять свое значение в runtime
+	
 `str(some_int)` преобразовать `Int` в `String`
+
 `int(some_float)` преобразовать `Float` в `Int`
+
 
 `Array`
 	`var array : Array[]` обьявление массива
+	
 	`var array : Array[Int] = [0,257,15,87,42]` обьявление массива с явным типом данных `Int`
+	
 	`array.size()` вернуть длину 
+	
 		// `Array` по сути просто перечень данных, идущих по списку
+		
 		// `Array` так же имеет `some_array.pick_random())`,  мелочь, а приятнно
+		
 		// Можно не указывать явный тип, но это черевато превращением массива в суп существ
 		
 	 
 `Dictionary` 
 	`var dict : Dictionary[]` обьявление словаря, значение словаря, как и ключ может быть чем угодно
+	
 	`var dict : Dictionary[id : String, name : String]` обьявление словаря с явным типом `String` на `String`
+	
 	`var dict : Dictionary[id : Int, name : String]` обьявление словаря с явным ключом `Int` и явным значением `String`
+	
 	`dict[331] = "redstone_dust"` задать значение словарю, `Int` на `String`
+	
 	`dict.get("redstone_dust", air)` получить `redsone_dust` из словаря, но если его там нет, получить `air`
+	
 	`dict.has("redstone_dust")`  проверить наличие значения по ключу
+	
 	`dict.erase("redstone_dust")` удалить значение из словаря
+	
 	`for dict.keys() in dict` перебор ключей, циклом
+	
 	`for dict.values() in dict` ну или так тоже можно
 
 ---
@@ -81,112 +136,185 @@
 `@export var some_int : Int` интегральное поле, которое можно разглядеть в инспекторе
 
 `@export` позволяет изменять поле в инспекторе
+
 `@export_range(min, max, step)` range прямо в инспекторе
+
 `@export_file(*.png)` поле с путем к файлу
+
 `@export_dir` поле для директории
+
 `@export_group(String)` группировать поля
+
 `@export_subgroup(String)` подгруппировать поля
+
 `@export_placeholder(String) var string : String` указать в поле подсказку
+
 `@export_colo_no_alpha var color : Color` выбор цвета без альфы 
 
+
 `.tres` сцена с данными, может читаться человеком и машиной
+
 `.res` сцена с данными, может читаться только машиной
+
 //`.res` чаще всего содержит `Material`, `Shader`, `Texture`, `Mesh`, `Animation`
+
 //`.tres` чаще всего содержит сцену с нодами
+
 # функции
 `func _ready():` - вызывается при инициализации
 `func process(delta):` - вызывается каждый кадр
+
 `func _physics_process(delta):` - физическая кадравая обработка
+
 `func some_function()` своя функция
+
 `func some_func(some_int : Int) :` функция, принимающая `int`
+
 `func some_func(some_int : Int = 0) :` функция, не обязательно принимающая `int`
+
 `func some_func(some_int : Int)-> float :` функция, принимающая `int`, возвращающаяя `float`
+
 // если функция должна что-то возвращать, то в конце, или месте где она должна вернуть значение, надо поставить `return` и само данное
+
 
 `await get_tree().create_timer(257).timeout` пример таймера
 
+
 `print()` функция, выводящая сообщение
+
 	// сообщение может быть любым, Float, String, Array
+	
 	// но в случае комплексного сообщения, содержащего множество данных, 
+	
 	// нужно преобразовывать данные в формат `String`, при помощи `str()`, и обязательно нужно складывать данные через +
+	
 	// пример` print("Roses are Red, Violets are Blue, Unexpected error at line " + str(257))`
 
+
 `snapped()` - это функция округления по шагам,
+
 	// проще всего понять это можно по похожей функции `snappedi(some_int,some_int1)`
+	
 	// допустим
+	
 	`var some_int = 123`
+	
 	`some_int = snappedi(some_int,16)`
+	
 	`print(some_int) # выдаст 128 `
+	
 	// `snappedi()` округляет `Int`, `snappedf()` округяет `Float`, `snapped()` округляет другие типы данных
+	
 	//`snapped()` не позволит округлить `String`, как бы странно это не звучало 
 
 # логические операторы
 `if 57 != 42 :
+
 	`print("Дуже потужно")` // если пятьдесят семь не равно сорока двум, вывести дуже потужно
+	
 `else : 
+
 	`print(257)`  // иначе вывести двести пятьдесят семь
 
-`if true == true : print(true)`
-//можно писать в одну строчку, если нужно выполнить, к примеру одну функцию
+`if true == true : print(true)` //можно писать в одну строчку, если нужно выполнить, к примеру одну функцию
 
 ---
 `for`,`while` это циклы, 
+
 `while` будет исполнятся до тех пор, пока значение `== true`
+
 `while true` будет циклится до бесконечности
+
 `while some_float < 2.4` пример с `float`
 
+
 `for` будет исполнятся указанное количество раз
+
 `for i in range(57)` выполнить цикл 57 раз
+
 `for a in Array.size()` а в данном случае переменная, Array.size() это количество, что будет прогонятся, это может быть любое целое число
 
+
 Так же еще стоит упомянуть о `pass`, `return`, `continue` и `break`
+
 `pass` говорит само за себя, просто пропускает часть кода
+
 `return` прерывает функцию, и отдает значение по умолчанию `void`, но может быть и другое значение
+
 `continue` пропускает действие цикла, и начинает его еще раз
+
 `break` просто прерывает цикл, и продолжает исполнение функции
+
 # язык системы
 `OS.get_locale().substr(0, 2)` вернет значение кода языка, к примеру `ru` или `en`
+
 `OS.get_locale()` возвращает полную локаль, к примеру `ru_RU` или `ja_JP`
+
 `OS.get_locale_language()` так же можно
+
 `OS` Сама по себе мощная штука,
+
 # загрузка файлов из проекта
 `func load_some() :
 	`var some_prefab = load("res://resource/prefab.tscn")`
+	
 	`get_node("/root/main").add_child(some_prefab)`
+	
 // пример загрузки префаба из директории проекта,
+
 // get_node() здесь используется для добавления ноды на сцену, то есть для того, чтобы его можно было увидеть физический
+
 // для загрузки можно использовать `load()` или `preload()`, оба они делают примерно одно и тоже, только с своим подходом
+
 `load()` загружает на лету
+
 `preload()` загружает заранее, и требует `const`
 
 # сохранение/загрузка ресурсов
 //Обычно производится через ResourceSaver/ResourceLoader соответственно
 // Путь надо указывать абсолютный, аля.
+
 `"user://" == "%APPDATA%\Godot\user\some_project" or "~/.local/share/godot/app_userdata/some_project"`
 
+
 `ResourceSaver(some_resource, "user://fnat.tres")` сохранить `.tres` где-то в каталоге пользователя
+
 `ResourceLoader("user://fnat.tres")` загрузка ресурса, из каталога пользователя, но лучше в конце добавлять класс ресурса, чтобы Godot понимал с чем работает
+
 `var some_loaded_resource = ResourceLoader("user://fnat.tres") as fnat_save` пример загрузки ресурса в качестве класса ресурса
 
 `FileAccess.file_exists("user://fnat.tres")` используется для проверки существования ресурса
 # autoload
 `Global Autoload` при запуске создает экземпляр
+
 // экземпляр создается под нодой "root", то есть можно получить к нему доступ через `get_node("/root/some_autoload")`
+
 // `Autoload` или же `Singletone` не дает возможность пользоваться `@export` 
+
 # unity
 Если есть какой-то опыт пользования Godot и Unity, то можно использовать гайды для Unity.
+
 У Unity много общего и похожести с Godot, чем у Unreal, и это дает возможность,
+
 Брать логику Unity и интерпритировать ее под логику Godot.
 
 К примеру, есть [тип на Youtube](youtube.com/@GregDevStuff), он сделал инвентарь для Unity.
+
 Он использовал Unity и C# для реализации. У меня это Godot и GDScript.
+
 И на удивление код получился почти идентичным, за исключениями мелких деталей и названий
+
 - GetComponent() -> get_node()
+  
 - GameObject.transform.position -> node3d.position
+  
 - TextMeshProGUI -> Label
+  
 - и по мелочи
+  
 Не знаю кому как, но для меня это в лишний раз подтверждает, что хоть Unity и Godot это разные инструменты,
 Предназначены одни примерно для одного и того же, только подход и философия у них разные.
+
 # егоры
 Ошибка доступа, недействительный доступ
 - Проверь доступность к полю
@@ -206,19 +334,20 @@ Mixed use of tabs and spaces for indentation
 ## Шейдеры
 
 ### примитивное окрашивание
-`uniform vec4 albedo : source_color; // основной цвет (оставить белым)
-`instance uniform vec4 coloring : source_color = vec4(1.0, 1.0, 1.0, 1.0); // окрашиваемый цвет
-`instance uniform float tint : hint_range(0.0, 1.0) = 1; // зона окрашивания, 0 красить всю модель, 1 красить только ffffff
+```
+uniform vec4 albedo : source_color; // основной цвет (оставить белым)
+instance uniform vec4 coloring : source_color = vec4(1.0, 1.0, 1.0, 1.0); // окрашиваемый цвет
+instance uniform float tint : hint_range(0.0, 1.0) = 1; // зона окрашивания, 0 красить всю модель, 1 красить только ffffff
 
-`fragment{
-	`vec4 albedo_tex = texture(texture_albedo, base_uv); // основная текстура, к примеру палитра
-	`ALBEDO = albedo.rgb * albedo_tex.rgb; // основное окрашивание модели
-	`float mask = step(tint, ALBEDO.r); // определение цветов закраски
-	`ALBEDO *= mix(albedo.rgb, coloring.rgb, mask); // окончательное окрашивание
-`}
-
+fragment{
+	vec4 albedo_tex = texture(texture_albedo, base_uv); // основная текстура, к примеру палитра
+	ALBEDO = albedo.rgb * albedo_tex.rgb; // основное окрашивание модели
+	float mask = step(tint, ALBEDO.r); // определение цветов закраски
+	ALBEDO *= mix(albedo.rgb, coloring.rgb, mask); // окончательное окрашивание
+}
+```
 # raycasting
-
+```
    position: Vector2 # point in world space for collision
    normal: Vector2 # normal in world space for collision
    collider: Object # Object collided or null (if unassociated)
@@ -226,8 +355,10 @@ Mixed use of tabs and spaces for indentation
    rid: RID # RID it collided against
    shape: int # shape index of collider
    metadata: Variant() # metadata of collider
-
+```
 # типы рендера
 `Forward+` для отрисовки использует Vulkan,D3D12
+
 `Compability` использует OpenGL
+
 С последним могут быть проблемы на компьютерах, так что лучше использовать `Forward+`
