@@ -58,6 +58,7 @@
 `Bool` `истина` или `ложь`, пример `1` или `0`
 
 `String` строка текста, пример `"Los Pollos Hermanos"`
+	// `some_string.length` или `len(some_string)` вернуть длинну текста
 
 `Vector2`,`Vector3`,`Vector4` сгруппированный `Float`, пример `Vector3(9.8, 0.0, -1.1)
 
