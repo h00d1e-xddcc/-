@@ -53,7 +53,7 @@
 `Vector2`,`Vector3`,`Vector4` сгруппированный `Float`, пример `Vector3(9.8, 0.0, -1.1)`    
 `Vector2i` и `Vector3i`,`Vector4i` сгруппированный `Int`, пример `Vector4(57, -106, 24, -5000)`  
 вектора имеют вшитые словари с базовыми значениями,  
-ZERO, ONE, INF, LEFT, RIGHT, UP, DOWN, FORWARD, BACK  
+`ZERO, ONE, INF, LEFT, RIGHT, UP, DOWN, FORWARD, BACK`  
 к примеру `Vector3.ZERO` == `Vector3(0, 0, 0)`  
 еще можно поставить `-` перед вектором, чтобы получить его отрицательное значение  
 к примеру `-Vector3.ONE` == `Vector3(-1, -1, -1)`  
