@@ -50,27 +50,27 @@ GitHub как не странно подходит лучше всего, нич
 
 ### Godot
 
-- <a href="#Ноды (узлы)" class="wikilink">#Ноды(узлы)</a>
-- <a href="#дочерние ноды" class="wikilink">#дочерниеноды</a>
+- <a href="#Ноды (узлы)" class="wikilink">#Ноды (узлы)</a>
+- <a href="#дочерние ноды" class="wikilink">#дочерние ноды</a>
 - <a href="#autoload" class="wikilink">#autoload</a>
-- <a href="#типы рендера" class="wikilink">#типырендера</a>
+- <a href="#типы рендера" class="wikilink">#типы рендера</a>
 
 ### GDScript
 
-- <a href="#поля основное" class="wikilink">#поляосновное</a>
-- <a href="#поля вектора" class="wikilink">#полявектора</a>
-- <a href="#поля godot" class="wikilink">#поляgodot</a>
-- <a href="#массив array" class="wikilink">#массивarray</a>
-- <a href="#массив dictionary" class="wikilink">#массивdictionary</a>
+- <a href="#поля основное" class="wikilink">#поля основное</a>
+- <a href="#поля вектора" class="wikilink">#поля вектора</a>
+- <a href="#поля godot" class="wikilink">#поля godot</a>
+- <a href="#массив array" class="wikilink">#массив array</a>
+- <a href="#массив dictionary" class="wikilink">#массив dictionary</a>
 - <a href="#export" class="wikilink">#export</a>
 - <a href="#функции" class="wikilink">#функции</a>
 - <a href="#логические операторы"
-  class="wikilink">#логическиеоператоры</a>
-- <a href="#язык системы" class="wikilink">#языксистемы</a>
+  class="wikilink">#логические операторы</a>
+- <a href="#язык системы" class="wikilink">#язык системы</a>
 - <a href="#загрузка файлов из проекта"
-  class="wikilink">#загрузкафайловизпроекта</a>
+  class="wikilink">#загрузка файлов из проекта</a>
 - <a href="#сохранение/загрузка ресурсов"
-  class="wikilink">#сохранение/загрузкаресурсов</a>
+  class="wikilink">#сохранение/загрузка ресурсов</a>
 - <a href="#raycasting" class="wikilink">#raycasting</a>
 
 ### Разное
@@ -78,7 +78,7 @@ GitHub как не странно подходит лучше всего, нич
 - <a href="#терминология" class="wikilink">#терминология</a>
 - <a href="#unity" class="wikilink">#unity</a>
 - <a href="#инструменты обратного инжинеринга"
-  class="wikilink">#инструментыобратногоинжинеринга</a>
+  class="wikilink">#инструменты обратного инжинеринга</a>
 - <a href="#терминология" class="wikilink">#терминология</a>
 - <a href="#Шейдеры" class="wikilink">#Шейдеры</a>
 - <a href="#еггоры" class="wikilink">#еггоры</a>
